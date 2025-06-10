@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:installLocation="internalOnly">
+    <uses-feature android:name="android.hardware.touchscreen"
+        android:required="false"/>
+    <application
+        android:allowBackup="false"
+        android:label="dnstt">
+        <provider android:name=".BinaryProvider"
+            android:exported="true"
+            android:directBootAware="true"
+            android:authorities="be.mygod.shadowsocks.plugin.dnstt.BinaryProvider"
+            tools:ignore="ExportedContentProvider">
+            <intent-filter>
+                <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN"/>
+                <data android:scheme="plugin"
+                    android:host="com.github.shadowsocks"
+                    android:path="/dnstt"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.github.shadowsocks.plugin.ACTION_NATIVE_PLUGIN"/>
+                <data android:scheme="plugin"
+                    android:host="com.github.shadowsocks"
+                    android:path="/dnstt"/>
+            </intent-filter>
+            <meta-data android:name="com.github.shadowsocks.plugin.id"
+                android:value="dnstt"/>
+            <meta-data android:name="com.github.shadowsocks.plugin.id.aliases"
+                android:value="dnstt"/>
+        </provider>
+        <activity
+            android:name=".ConfigActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Shadowsocks.Immersive">
+            <intent-filter>
+                <action android:name="com.github.shadowsocks.plugin.ACTION_CONFIGURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="plugin"
+                    android:host="com.github.shadowsocks"
+                    android:path="/dnstt"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

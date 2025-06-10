@@ -1,0 +1,3 @@
+[submodule "app/src/main/go/dnstt"]
+	path = app/src/main/go/dnstt
+	url = git@github.com:Mygod/dnstt.git

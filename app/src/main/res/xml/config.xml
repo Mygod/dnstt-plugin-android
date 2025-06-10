@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.takisoft.preferencex.SimpleMenuPreference
+        app:key="transport"
+        app:persistent="false"
+        app:entries="@array/transport_names"
+        app:entryValues="@array/transports"
+        app:title="DNS transport"
+        app:useSimpleSummaryProvider="true"/>
+    <EditTextPreference
+        app:key="resolver"
+        app:persistent="false"
+        app:title="Resolver URL (for HTTPS) or address (for TLS or UDP)"
+        app:useSimpleSummaryProvider="true"/>
+    <EditTextPreference
+        app:key="pubkey"
+        app:persistent="false"
+        app:title="Server public key (64 hex digits)"
+        app:useSimpleSummaryProvider="true"/>
+    <EditTextPreference
+        app:key="domain"
+        app:persistent="false"
+        app:title="Domain name"
+        app:useSimpleSummaryProvider="true"/>
+</PreferenceScreen>
