@@ -20,7 +20,7 @@ android {
         minSdk = 23
         targetSdk = 35
         versionCode = 1
-        versionName = "1.0.0"
+        versionName = "0.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,7 +35,8 @@ android {
     splits {
         abi {
             isEnable = true
-            isUniversalApk = true
+            reset()
+            include("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
         }
     }
     sourceSets.getByName("main").jniLibs.srcDirs(files("$projectDir/build/go"))
